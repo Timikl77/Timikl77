@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timikl77</title>
+  <meta name="description" content="Comunidad Timikl77. Sigue el canal en WhatsApp." />
+  <link rel="icon" href="comunidad.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050509;
+      --red: #e11d3a;
+      --red-bright: #ff2d4a;
+      --blue: #1b6dff;
+      --blue-bright: #4ea3ff;
+      --text: #f3f5ff;
+      --muted: #a8b0c8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--black); color: var(--text); font-family: Manrope, system-ui, sans-serif; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(225,29,58,.22), transparent 32%),
+        radial-gradient(circle at 88% 12%, rgba(27,109,255,.22), transparent 34%),
+        radial-gradient(circle at 50% 100%, rgba(225,29,58,.08), transparent 40%),
+        #050509;
+    }
+
+    .glow-line {
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), #fff 48%, var(--blue));
+    }
+
+    .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+    }
+    .logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 28px;
+      letter-spacing: .12em;
+    }
+    .logo b { color: var(--red-bright); }
+    .logo i { font-style: normal; color: var(--blue-bright); }
+
+    .pill {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 34px;
+      align-items: center;
+      padding: 18px 0 50px;
+    }
+
+    .kicker {
+      display: inline-block;
+      color: var(--blue-bright);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(52px, 9vw, 92px);
+      line-height: .86;
+      letter-spacing: .03em;
+      margin-bottom: 16px;
+    }
+    h1 span {
+      display: block;
+      background: linear-gradient(90deg, #fff, #fff 30%, var(--red-bright) 58%, var(--blue-bright));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 38ch;
+      margin-bottom: 26px;
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .04em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-red {
+      color: #fff;
+      background: linear-gradient(90deg, var(--red), var(--red-bright));
+      box-shadow: 0 10px 30px rgba(225,29,58,.35);
+    }
+    .btn-blue {
+      color: #fff;
+      background: rgba(27,109,255,.16);
+      border: 1px solid rgba(78,163,255,.45);
+    }
+
+    .frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.08),
+        -18px 0 50px rgba(225,29,58,.22),
+        18px 0 50px rgba(27,109,255,.22);
+    }
+    .frame img {
+      width: 100%;
+      display: block;
+      height: min(560px, 68vh);
+      object-fit: cover;
+      object-position: center 35%;
+      filter: contrast(1.08) saturate(1.12);
+    }
+    .frame::before,
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .frame::before {
+      background: linear-gradient(90deg, rgba(225,29,58,.28), transparent 28%, transparent 72%, rgba(27,109,255,.32));
+      mix-blend-mode: screen;
+    }
+    .frame::after {
+      background: linear-gradient(180deg, transparent 58%, rgba(5,5,9,.72));
+    }
+    .tag {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 2;
+      background: rgba(5,5,9,.72);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding-bottom: 56px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 20px;
+      min-height: 148px;
+    }
+    .card:nth-child(1) { border-top: 3px solid var(--red); }
+    .card:nth-child(2) { border-top: 3px solid #fff; }
+    .card:nth-child(3) { border-top: 3px solid var(--blue-bright); }
+    .card h3 { font-size: 15px; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 18px 0 36px;
+      color: #7f879d;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .frame img { height: 360px; }
+      .strip { grid-template-columns: 1fr; }
+      h1 { font-size: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-line"></div>
+  <div class="wrap">
+    <header>
+      <div class="logo">TIMI<b>K</b>L<i>77</i></div>
+      <div class="pill">Comunidad</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="kicker">Canal oficial</p>
+        <h1>TIMIKL77<span>COMUNIDAD</span></h1>
+        <p class="lead">
+          Página de la comunidad. Entra al canal de WhatsApp y no te pierdas lo que se publica.
+        </p>
+        <div class="actions">
+          <a class="btn btn-red" href="https://whatsapp.com/channel/0029Vb9GVTPAe5VpnxFPLf1p" target="_blank" rel="noopener">
+            Seguir en WhatsApp
+          </a>
+          <a class="btn btn-blue" href="https://whatsapp.com/channel/0029Vb9GVTPAe5VpnxFPLf1p" target="_blank" rel="noopener">
+            Abrir canal
+          </a>
+        </div>
+      </div>
+
+      <figure class="frame">
+        <img src="comunidad.jpg" alt="Foto de perfil de la comunidad Timikl77" />
+        <div class="tag">Foto de la comunidad</div>
+      </figure>
+    </section>
+
+    <section class="strip">
+      <article class="card">
+        <h3>La banda</h3>
+        <p>Espacio de la comunidad Timikl77. Si llegaste hasta aquí, ya eres de aquí.</p>
+      </article>
+      <article class="card">
+        <h3>WhatsApp</h3>
+        <p>El canal vive ahí. Toca el botón rojo, síguelo y listo.</p>
+      </article>
+      <article class="card">
+        <h3>Comparte</h3>
+        <p>Manda esta página para que entren al canal sin andar buscando el link.</p>
+      </article>
+    </section>
+
+    <footer>
+      <span>© <span id="y"></span> Timikl77</span>
+      <span>Negro · rojo · azul</span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
